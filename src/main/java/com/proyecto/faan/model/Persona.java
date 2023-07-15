@@ -1,12 +1,11 @@
 package com.proyecto.faan.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
-
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 @Setter
 @Getter
@@ -52,9 +51,12 @@ public class Persona {
     @Column(name = "genero")
     private String genero;
 
-
     // REFERENCIA DE LAS RELACIONES
     @JsonIgnore
     @OneToMany(mappedBy = "persona")
     private List<Usuario> usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "idEncabezadoAdopcion", referencedColumnName = "idEncabezadoAdopcion")
+    private EncabezadoAdopcion idEncabezadoAdopcion;
 }
