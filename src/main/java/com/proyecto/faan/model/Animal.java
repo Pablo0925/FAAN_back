@@ -13,6 +13,7 @@ import java.util.List;
 @Entity
 @Table(name = "animales")
 public class Animal implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idAnimal")
@@ -31,23 +32,23 @@ public class Animal implements Serializable {
     private String estadoAnimal;
 
     @ManyToOne
-    @JoinColumn(name="idRazaAnimal",referencedColumnName ="idRazaAnimal")
+    @JoinColumn(name = "idRazaAnimal", referencedColumnName = "idRazaAnimal")
     private RazaAnimal razaAnimal;
 
     @ManyToOne
-    @JoinColumn(name="idFichaRegistro",referencedColumnName ="idFichaRegistro")
+    @JoinColumn(name = "idFichaRegistro", referencedColumnName = "idFichaRegistro")
     private FichaRegistro fichaRegistro;
 
     @ManyToOne
-    @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
+    @JoinColumn(name = "idFichaMedica", referencedColumnName = "idFichaMedica")
     private FichaMedica fichaMedica;
 
-    @ManyToOne
-    @JoinColumn(name="idFudacion",referencedColumnName ="idFudacion")
-    private Fundacion fundacion;
+    @JsonIgnore
+    @OneToMany(mappedBy = "idAdopcion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<DetalleAdopcion> listaDetalle;
 
     //Referencia al detalle de adopcion..
-    @JsonIgnore
-    @OneToMany(mappedBy = "animal")
-    private List<DetalleAdopcion> detalleAdopcion;
+    /*@JsonIgnore
+    @OneToMany(mappedBy = "detalleAdopcion")
+    private List<DetalleAdopcion> detalleAdopcion;*/
 }
