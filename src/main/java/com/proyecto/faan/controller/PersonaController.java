@@ -1,4 +1,4 @@
-package com.proyecto.faan;
+package com.proyecto.faan.controller;
 
 import com.proyecto.faan.controller.GenericControllerImpl;
 import com.proyecto.faan.model.Persona;
