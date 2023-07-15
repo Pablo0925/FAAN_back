@@ -29,4 +29,8 @@ public class Vacuna {
     @ManyToOne
     @JoinColumn(name="idTipoVacuna",referencedColumnName ="idTipoVacuna")
     private TipoVacuna tipoVacuna;
+
+    @ManyToOne
+    @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
+    private FichaMedica fichaMedica;
 }
