@@ -16,4 +16,9 @@ public class UsuarioServiceImpl extends GenericServiceImpl<Usuario, Integer> imp
     public GenericRepository<Usuario, Integer> getDao() {
         return usuarioRepository;
     }
+
+    @Override
+    public Usuario findByUsernameAndPassword(String username, String password) {
+        return usuarioRepository.findByUsernameAndPassword(username, password);
+    }
 }
