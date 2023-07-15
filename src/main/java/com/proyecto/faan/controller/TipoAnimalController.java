@@ -1,8 +1,8 @@
 package com.proyecto.faan.controller;
 
 import com.proyecto.faan.controller.Generic.GenericControllerImpl;
-import com.proyecto.faan.model.Persona;
-import com.proyecto.faan.service.PersonaService;
+import com.proyecto.faan.model.TipoAnimal;
+import com.proyecto.faan.service.TipoAnimalService;
 import com.proyecto.faan.service.generic.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/persona")
-public class PersonaController extends GenericControllerImpl<Persona, Integer> {
+@RequestMapping("/api/tipoanimal")
+public class TipoAnimalController extends GenericControllerImpl<TipoAnimal, Integer> {
     @Autowired
-    private PersonaService personaService;
+    private TipoAnimalService tipoAnimalService;
     @Override
-    protected GenericService<Persona, Integer> getService() {
-        return personaService;
+    protected GenericService<TipoAnimal, Integer> getService() {
+        return tipoAnimalService;
     }
 }
