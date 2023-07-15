@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsuarioRepository extends GenericRepository<Usuario,Integer> {
+
+    public Usuario findByUsernameAndPassword(String username, String password);
 }
