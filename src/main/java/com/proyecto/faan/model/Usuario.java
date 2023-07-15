@@ -32,13 +32,13 @@ public class Usuario {
     @Column(name = "tokenPassword", length = 1800)
     private String tokenPassword;
 
-    // RELACIONES
+    // RELATIONS
     @ManyToOne
     @JoinColumn(name="idPersona",referencedColumnName ="idPersona")
     private Persona persona;
 
 
-    //RELACION DE MUCHOS A MUCHOS
+    //RELATIONS THE MANY TO MANY
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
