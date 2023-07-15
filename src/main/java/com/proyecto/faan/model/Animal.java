@@ -42,8 +42,12 @@ public class Animal implements Serializable {
     @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
     private FichaMedica fichaMedica;
 
+    @ManyToOne
+    @JoinColumn(name="idFudacion",referencedColumnName ="idFudacion")
+    private Fundacion fundacion;
+
     //Referencia al detalle de adopcion..
-    /*@JsonIgnore
-    @OneToMany(mappedBy = "detalleAdopcion")
-    private List<DetalleAdopcion> detalleAdopcion;*/
+    @JsonIgnore
+    @OneToMany(mappedBy = "animal")
+    private List<DetalleAdopcion> detalleAdopcion;
 }

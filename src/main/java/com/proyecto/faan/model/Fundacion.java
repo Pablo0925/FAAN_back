@@ -1,8 +1,11 @@
 package com.proyecto.faan.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -37,5 +40,9 @@ public class Fundacion {
 
     @Column(name = "horarios")
     private String horarios;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "idEncabezadoAdopcion")
+    private List<DetalleAdopcion> listaDetalle;
 
 }

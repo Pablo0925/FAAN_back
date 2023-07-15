@@ -2,6 +2,8 @@ package com.proyecto.faan.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 import lombok.Getter;
@@ -11,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Entity
 @Table(name = "personas")
-public class Persona {
+public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,7 +58,9 @@ public class Persona {
     @OneToMany(mappedBy = "persona")
     private List<Usuario> usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "idEncabezadoAdopcion", referencedColumnName = "idEncabezadoAdopcion")
-    private EncabezadoAdopcion idEncabezadoAdopcion;
+    @JsonIgnore
+    @OneToMany(mappedBy = "persona")
+    private List<EncabezadoAdopcion> encabezadoAdopcions;
+
+
 }
