@@ -27,9 +27,7 @@ public class Alergias {
     @Column(name = "idAlergias")
     private Integer idAlergias;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "idAlergias", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<TipoAlergias> listaTipoAlergias;
+
 
     @Column(name = "fechaDeteccion")
     private LocalDate fechaDeteccion;
@@ -38,6 +36,10 @@ public class Alergias {
     private String observacion;
 
     // RELATIONSHIP
+    @ManyToOne
+    @JoinColumn(name = "idTipoAlergia", referencedColumnName = "idTipoAlergia")
+    private TipoAlergias tipoAlergias;
+
     @ManyToOne
     @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
     private FichaMedica fichaMedica;
