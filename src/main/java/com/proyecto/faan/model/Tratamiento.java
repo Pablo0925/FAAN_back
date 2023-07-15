@@ -29,4 +29,8 @@ public class Tratamiento {
     @ManyToOne
     @JoinColumn(name="idTipoTratamiento",referencedColumnName ="idTipoTratamiento")
     private TipoTratamiento tipoTratamiento;
+
+    @ManyToOne
+    @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
+    private FichaMedica fichaMedica;
 }
