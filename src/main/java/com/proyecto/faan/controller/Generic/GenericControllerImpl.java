@@ -1,4 +1,4 @@
-package com.proyecto.faan.controller;
+package com.proyecto.faan.controller.Generic;
 
 import com.proyecto.faan.service.generic.GenericService;
 import org.springframework.data.domain.Pageable;

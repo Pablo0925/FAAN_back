@@ -1,4 +1,4 @@
-package com.proyecto.faan.controller;
+package com.proyecto.faan.controller.Generic;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
