@@ -22,7 +22,7 @@ public class Rol {
     @Column(name = "estadoRolActivo")
     private Boolean estadoRolActivo;
 
-    // REFERENCIA DE LAS RELACIONES
+    // REFERENCE
    /* @JsonIgnore
     @OneToMany(mappedBy = "rol")
     private List<Usuario> usuario;*/
