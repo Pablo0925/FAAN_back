@@ -1,6 +1,6 @@
 package com.proyecto.faan.controller;
 
-import com.proyecto.faan.controller.GenericControllerImpl;
+import com.proyecto.faan.controller.Generic.GenericControllerImpl;
 import com.proyecto.faan.model.Persona;
 import com.proyecto.faan.service.PersonaService;
 import com.proyecto.faan.service.generic.GenericService;
