@@ -22,6 +22,8 @@ public class FichaMedica implements Serializable {
     @Column(name = "descripcionFichaMedica")
     private String descripcionFichaMedica;
 
+    // REFERENCE
+    
     @JsonIgnore
     @OneToMany(mappedBy = "fichaMedica")
     private List<Animal> animals;

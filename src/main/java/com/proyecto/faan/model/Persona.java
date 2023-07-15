@@ -51,12 +51,14 @@ public class Persona {
     @Column(name = "genero")
     private String genero;
 
-    // REFERENCIA DE LAS RELACIONES
+    // REFERENCE
     @JsonIgnore
     @OneToMany(mappedBy = "persona")
     private List<Usuario> usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "idEncabezadoAdopcion", referencedColumnName = "idEncabezadoAdopcion")
-    private EncabezadoAdopcion idEncabezadoAdopcion;
+    @JsonIgnore
+    @OneToMany(mappedBy = "persona")
+    private List<EncabezadoAdopcion> encabezadoAdopcions;
+
+
 }

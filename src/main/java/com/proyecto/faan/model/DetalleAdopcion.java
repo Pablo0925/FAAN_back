@@ -39,4 +39,8 @@ public class DetalleAdopcion {
     @ManyToOne
     @JoinColumn(name = "idEncabezadoAdopcion", referencedColumnName = "idEncabezadoAdopcion")
     private EncabezadoAdopcion idEncabezadoAdopcion;
+
+    @ManyToOne
+    @JoinColumn(name = "idAnimal", referencedColumnName = "idAnimal")
+    private Animal animal;
 }

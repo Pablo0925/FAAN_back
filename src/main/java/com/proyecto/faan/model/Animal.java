@@ -13,6 +13,7 @@ import java.util.List;
 @Entity
 @Table(name = "animales")
 public class Animal implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idAnimal")
@@ -30,20 +31,29 @@ public class Animal implements Serializable {
     @Column(name = "estadoAnimal")
     private String estadoAnimal;
 
+
+    // RELATIONSHIP
     @ManyToOne
-    @JoinColumn(name="idRazaAnimal",referencedColumnName ="idRazaAnimal")
+    @JoinColumn(name = "idRazaAnimal", referencedColumnName = "idRazaAnimal")
     private RazaAnimal razaAnimal;
 
     @ManyToOne
-    @JoinColumn(name="idFichaRegistro",referencedColumnName ="idFichaRegistro")
+    @JoinColumn(name = "idFichaRegistro", referencedColumnName = "idFichaRegistro")
     private FichaRegistro fichaRegistro;
 
     @ManyToOne
-    @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
+    @JoinColumn(name = "idFichaMedica", referencedColumnName = "idFichaMedica")
     private FichaMedica fichaMedica;
 
-    //Referencia al detalle de adopcion..
-    /*@JsonIgnore
-    @OneToMany(mappedBy = "detalleAdopcion")
-    private List<DetalleAdopcion> detalleAdopcion;*/
+    @ManyToOne
+    @JoinColumn(name = "idFudacion", referencedColumnName = "idFudacion")
+    private Fundacion fundacion;
+
+
+
+    // REFERENCE
+    @JsonIgnore
+    @OneToMany(mappedBy = "animal")
+    private List<DetalleAdopcion> detalleAdopcion;
+    
 }
