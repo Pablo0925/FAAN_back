@@ -31,6 +31,8 @@ public class Animal implements Serializable {
     @Column(name = "estadoAnimal")
     private String estadoAnimal;
 
+
+    // RELATIONSHIP
     @ManyToOne
     @JoinColumn(name = "idRazaAnimal", referencedColumnName = "idRazaAnimal")
     private RazaAnimal razaAnimal;
@@ -43,12 +45,15 @@ public class Animal implements Serializable {
     @JoinColumn(name = "idFichaMedica", referencedColumnName = "idFichaMedica")
     private FichaMedica fichaMedica;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "idAdopcion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<DetalleAdopcion> listaDetalle;
+    @ManyToOne
+    @JoinColumn(name = "idFudacion", referencedColumnName = "idFudacion")
+    private Fundacion fundacion;
 
-    //Referencia al detalle de adopcion..
-    /*@JsonIgnore
-    @OneToMany(mappedBy = "detalleAdopcion")
-    private List<DetalleAdopcion> detalleAdopcion;*/
+
+
+    // REFERENCE
+    @JsonIgnore
+    @OneToMany(mappedBy = "animal")
+    private List<DetalleAdopcion> detalleAdopcion;
+    
 }
