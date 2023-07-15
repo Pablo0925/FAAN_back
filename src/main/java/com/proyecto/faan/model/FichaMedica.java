@@ -25,4 +25,24 @@ public class FichaMedica implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "fichaMedica")
     private List<Animal> animals;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "fichaMedica")
+    private List<Vacuna> vacunas;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "fichaMedica")
+    private List<Tratamiento> tratamientos;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "fichaMedica")
+    private List<Enfermedad> enfermedads;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "fichaMedica")
+    private List<ExamenFisico> examenFisicos;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "fichaMedica")
+    private List<Alergias> alergias;
 }
