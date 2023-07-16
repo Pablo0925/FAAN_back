@@ -39,6 +39,6 @@ public class EncabezadoAdopcion {
     private Persona persona;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "idEncabezadoAdopcion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "encabezadoAdopcion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<DetalleAdopcion> listaDetalle;
 }
