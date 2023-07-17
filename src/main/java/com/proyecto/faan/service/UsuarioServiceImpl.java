@@ -23,8 +23,8 @@ public class UsuarioServiceImpl extends GenericServiceImpl<Usuario, Integer> imp
     }
 
     @Override
-    public Usuario findByPersonaIdentificacion(String identificacion) {
-        return usuarioRepository.findByPersonaIdentificacion(identificacion);
+    public Usuario findByPersonaEmail(String identificacion) {
+        return usuarioRepository.findByPersonaCorreo(identificacion);
     }
 
     @Override

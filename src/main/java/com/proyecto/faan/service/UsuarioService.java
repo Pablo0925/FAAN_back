@@ -6,7 +6,7 @@ import com.proyecto.faan.service.generic.GenericService;
 public interface UsuarioService extends GenericService<Usuario, Integer> {
     public Usuario findByUsernameAndPassword(String username, String password);
 
-    public Usuario findByPersonaIdentificacion(String identificacion);
+    public Usuario findByPersonaEmail(String identificacion);
 
     public Usuario findByTokenPassword(String tokenPassword);
 }

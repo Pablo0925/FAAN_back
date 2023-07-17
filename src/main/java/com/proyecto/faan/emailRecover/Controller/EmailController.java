@@ -36,11 +36,11 @@ public class EmailController {
     //private PasswordEncoder passwordEncoder;
 
 
-      @GetMapping("/email/sendRecuperacionPassword/{identificacion}")
-    public ResponseEntity<?> sendEmailRecuperacion(@PathVariable("identificacion") String identificacion){
+      @GetMapping("/email/sendRecuperacionPassword/{email}")
+    public ResponseEntity<?> sendEmailRecuperacion(@PathVariable("email") String email){
 
         try {
-            Usuario usuario = usuarioService.findByPersonaIdentificacion(identificacion);
+            Usuario usuario = usuarioService.findByPersonaEmail(email);
             if (usuario == null) {
                 return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("NOT_FOUND_USUARIO");
             }
