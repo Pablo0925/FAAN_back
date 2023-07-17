@@ -2,6 +2,7 @@ package com.proyecto.faan.service.generic;
 
 import com.proyecto.faan.repository.generic.GenericRepository;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import java.io.Serializable;
@@ -22,6 +23,14 @@ public abstract class GenericServiceImpl<T,ID extends Serializable> implements G
 
     @Override
     public Page<T> findByAll(Pageable pageable) {
+        //VERIFICACIÓN DE LA PAGINACIÓN----
+
+        /*if(pageable.getPageNumber() < 0 || pageable.getPageSize() < 1 || pageable.getSort().isEmpty()){
+            int defaultPage = 0;
+            int defaultSize = 10;
+            pageable = PageRequest.of(defaultPage, defaultSize);
+        }*/
+
         Page<T> list = getDao().findAll(pageable);
         return list;
     }
