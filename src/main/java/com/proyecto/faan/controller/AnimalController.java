@@ -41,7 +41,13 @@ public class AnimalController extends GenericControllerImpl<Animal, Integer> {
     @GetMapping("/findBynameAnimalOrPlacaAnimal/{filter}")
     public ResponseEntity<?> findBynameAnimalOrPlacaAnimal(@PathVariable("filter") String filter, @PageableDefault(page = 0, size = 3, direction = Sort.Direction.ASC) Pageable pageable) {
         try {
-            Page<Animal> animalFind = animalService.findByNombreAnimalOrPlacaAnimal(filter, pageable);
+            Page<Animal> animalFind;
+
+            if(filter.isEmpty()){
+                return new ResponseEntity<>(animalService.findByAll(pageable), HttpStatus.OK);
+            }else{
+                animalFind = animalService.findByNombreAnimalOrPlacaAnimal(filter, pageable);
+            }
             if(animalFind != null){
                 return new ResponseEntity<>(animalFind, HttpStatus.OK);
             }
