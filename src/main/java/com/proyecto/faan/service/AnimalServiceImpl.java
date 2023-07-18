@@ -1,13 +1,15 @@
 package com.proyecto.faan.service;
 
-import com.proyecto.faan.model.Alergias;
 import com.proyecto.faan.model.Animal;
-import com.proyecto.faan.repository.AlergiasRepository;
+import com.proyecto.faan.peyload.PeyloadNumeroAdopcionFecha;
+import com.proyecto.faan.peyload.PeyloadNumeroAdopcionRaza;
 import com.proyecto.faan.repository.AnimalRepository;
 import com.proyecto.faan.repository.generic.GenericRepository;
 import com.proyecto.faan.service.generic.GenericServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AnimalServiceImpl extends GenericServiceImpl<Animal, Integer> implements AnimalService{
@@ -17,5 +19,13 @@ public class AnimalServiceImpl extends GenericServiceImpl<Animal, Integer> imple
     @Override
     public GenericRepository<Animal, Integer> getDao() {
         return animalRepository;
+    }
+
+    public List<PeyloadNumeroAdopcionRaza> findByAnimalPeyload() {
+        return animalRepository.findByAnimalPeyload();
+    }
+
+    public List<PeyloadNumeroAdopcionFecha> findByAnimalPeyloadFechaAdopcion() {
+        return animalRepository.findByAnimalPeyloadFechaAdopcion();
     }
 }
