@@ -19,6 +19,6 @@ public interface AnimalRepository extends GenericRepository<Animal,Integer> {
     @Query("SELECT YEAR(enca.fechaAdopcion) as fechaAdopcion, COUNT(da) as numeroAdopcionFecha FROM DetalleAdopcion da JOIN da.encabezadoAdopcion enca GROUP BY YEAR(enca.fechaAdopcion)")
     List<PeyloadNumeroAdopcionFecha> findByAnimalPeyloadFechaAdopcion();
 
-    public Page<Animal> findByNombreAnimalOrPlacaAnimal(String nameA, String placaA, Pageable pageable);
+    public Page<Animal> findByNombreAnimalContainingIgnoreCaseOrPlacaAnimalContainingIgnoreCase(String nameA, String placaA, Pageable pageable);
 
 }
