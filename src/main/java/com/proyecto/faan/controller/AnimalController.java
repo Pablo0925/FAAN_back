@@ -39,7 +39,7 @@ public class AnimalController extends GenericControllerImpl<Animal, Integer> {
     }
 
     @GetMapping("/findBynameAnimalOrPlacaAnimal/{filter}")
-    public ResponseEntity<?> findBynameAnimalOrPlacaAnimal(@PathVariable("filter") String filter, @PageableDefault(page = 0, size = 3, direction = Sort.Direction.ASC) Pageable pageable) {
+    public ResponseEntity<?> findBynameAnimalOrPlacaAnimal(@PathVariable(value = "filter")  String filter, @PageableDefault(page = 0, size = 3, direction = Sort.Direction.ASC) Pageable pageable) {
         try {
             Page<Animal> animalFind;
 
