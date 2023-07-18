@@ -1,1 +1,32 @@
-/application.properties
+# Archivos generados por IDEs
+.idea/
+.vscode/
+
+# Archivos generados por Maven
+target/
+build/
+
+# Archivos de configuración local
+application.properties
+
+# Logs
+logs/
+*.log
+
+# Archivos de respaldo
+*.bak
+*.bak.*
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de dependencias de Gradle
+.gradle/
+
+# Archivos de caché de Maven
+.m2/
+
+# Dependencias del sistema operativo (Windows)
+Thumbs.db
+Desktop.ini
