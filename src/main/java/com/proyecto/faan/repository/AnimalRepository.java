@@ -4,6 +4,8 @@ import com.proyecto.faan.model.Animal;
 import com.proyecto.faan.peyload.PeyloadNumeroAdopcionFecha;
 import com.proyecto.faan.peyload.PeyloadNumeroAdopcionRaza;
 import com.proyecto.faan.repository.generic.GenericRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +18,7 @@ public interface AnimalRepository extends GenericRepository<Animal,Integer> {
 
     @Query("SELECT YEAR(enca.fechaAdopcion) as fechaAdopcion, COUNT(da) as numeroAdopcionFecha FROM DetalleAdopcion da JOIN da.encabezadoAdopcion enca GROUP BY YEAR(enca.fechaAdopcion)")
     List<PeyloadNumeroAdopcionFecha> findByAnimalPeyloadFechaAdopcion();
+
+    public Page<Animal> findByNombreAnimalOrPlacaAnimal(String nameA, String placaA, Pageable pageable);
 
 }
