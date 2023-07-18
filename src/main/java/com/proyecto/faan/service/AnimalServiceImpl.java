@@ -33,6 +33,6 @@ public class AnimalServiceImpl extends GenericServiceImpl<Animal, Integer> imple
 
     @Override
     public Page<Animal> findByNombreAnimalOrPlacaAnimal(String filter, Pageable pageable) {
-        return animalRepository.findByNombreAnimalOrPlacaAnimal(filter, filter, pageable);
+        return animalRepository.findByNombreAnimalContainingIgnoreCaseOrPlacaAnimalContainingIgnoreCase(filter, filter, pageable);
     }
 }
