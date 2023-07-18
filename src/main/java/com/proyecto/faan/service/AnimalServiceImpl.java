@@ -1,6 +1,7 @@
 package com.proyecto.faan.service;
 
 import com.proyecto.faan.model.Animal;
+import com.proyecto.faan.peyload.PeyloadAnimal;
 import com.proyecto.faan.peyload.PeyloadNumeroAdopcionFecha;
 import com.proyecto.faan.peyload.PeyloadNumeroAdopcionRaza;
 import com.proyecto.faan.repository.AnimalRepository;
@@ -34,5 +35,15 @@ public class AnimalServiceImpl extends GenericServiceImpl<Animal, Integer> imple
     @Override
     public Page<Animal> findByNombreAnimalOrPlacaAnimal(String filter, Pageable pageable) {
         return animalRepository.findByNombreAnimalContainingIgnoreCaseOrPlacaAnimalContainingIgnoreCase(filter, filter, pageable);
+    }
+
+    @Override
+    public Page<PeyloadAnimal> findByPlacaOrNombre(String filter, Pageable pageable) {
+        Page<PeyloadAnimal> findAnimal = animalRepository.findByPlacaOrNombre(filter, pageable);
+
+        if(findAnimal != null){
+            return findAnimal;
+        }
+        return null;
     }
 }

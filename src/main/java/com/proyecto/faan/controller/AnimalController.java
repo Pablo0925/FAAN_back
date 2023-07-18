@@ -2,6 +2,7 @@ package com.proyecto.faan.controller;
 
 import com.proyecto.faan.controller.Generic.GenericControllerImpl;
 import com.proyecto.faan.model.Animal;
+import com.proyecto.faan.peyload.PeyloadAnimal;
 import com.proyecto.faan.peyload.PeyloadNumeroAdopcionFecha;
 import com.proyecto.faan.peyload.PeyloadNumeroAdopcionRaza;
 import com.proyecto.faan.service.AnimalService;
@@ -39,7 +40,7 @@ public class AnimalController extends GenericControllerImpl<Animal, Integer> {
     }
 
     @GetMapping("/findBynameAnimalOrPlacaAnimal/{filter}")
-    public ResponseEntity<?> findBynameAnimalOrPlacaAnimal(@PathVariable("filter") String filter, @PageableDefault(page = 0, size = 3, direction = Sort.Direction.ASC) Pageable pageable) {
+    public ResponseEntity<?> findBynameAnimalOrPlacaAnimal(@PathVariable(value = "filter", required = false) String filter, @PageableDefault(page = 0, size = 3, direction = Sort.Direction.ASC) Pageable pageable) {
         try {
             Page<Animal> animalFind;
 
@@ -48,6 +49,20 @@ public class AnimalController extends GenericControllerImpl<Animal, Integer> {
             }else{
                 animalFind = animalService.findByNombreAnimalOrPlacaAnimal(filter, pageable);
             }
+            if(animalFind != null){
+                return new ResponseEntity<>(animalFind, HttpStatus.OK);
+            }
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/findBynameOrplaca/{filter}")
+    public ResponseEntity<?> findBynameOrplaca(@PathVariable("filter") String filter, @PageableDefault(page = 0, size = 3, direction = Sort.Direction.ASC) Pageable pageable) {
+        try {
+            Page<PeyloadAnimal> animalFind = animalService.findByPlacaOrNombre(filter, pageable);
+
             if(animalFind != null){
                 return new ResponseEntity<>(animalFind, HttpStatus.OK);
             }
