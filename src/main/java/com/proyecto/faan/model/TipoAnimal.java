@@ -21,6 +21,9 @@ public class TipoAnimal implements Serializable {
     @Column(name = "nombreTipo", unique = true)
     private String nombreTipo;
 
+    @Column(name = "descripcionAnimal")
+    private String descripcionAnimal;
+
     @Column(name = "estadoTipo")
     private String estadoTipo;
 
