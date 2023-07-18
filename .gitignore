@@ -1,32 +1,33 @@
-# Archivos generados por IDEs
-.idea/
-.vscode/
-
-# Archivos generados por Maven
+HELP.md
 target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Archivos de configuración local
-application.properties
-
-# Logs
-logs/
-*.log
-
-# Archivos de respaldo
-*.bak
-*.bak.*
-
-# Archivos temporales
-*.tmp
-*.temp
-
-# Archivos de dependencias de Gradle
-.gradle/
-
-# Archivos de caché de Maven
-.m2/
-
-# Dependencias del sistema operativo (Windows)
-Thumbs.db
-Desktop.ini
+### VS Code ###
+.vscode/
