@@ -20,7 +20,7 @@ public class Animal implements Serializable {
     private Integer idAnimal;
 
     @Column(name = "placaAnimal", unique = true)
-    private Integer placaAnimal;
+    private String placaAnimal;
 
     @Column(name = "nombreAnimal", length = 255)
     private String nombreAnimal;
