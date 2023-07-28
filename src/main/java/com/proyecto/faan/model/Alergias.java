@@ -42,4 +42,44 @@ public class Alergias {
     @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
     private FichaMedica fichaMedica;
 
+	public Integer getIdAlergias() {
+		return idAlergias;
+	}
+
+	public void setIdAlergias(Integer idAlergias) {
+		this.idAlergias = idAlergias;
+	}
+
+	public LocalDate getFechaDeteccion() {
+		return fechaDeteccion;
+	}
+
+	public void setFechaDeteccion(LocalDate fechaDeteccion) {
+		this.fechaDeteccion = fechaDeteccion;
+	}
+
+	public String getObservacion() {
+		return observacion;
+	}
+
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
+
+	public TipoAlergias getTipoAlergias() {
+		return tipoAlergias;
+	}
+
+	public void setTipoAlergias(TipoAlergias tipoAlergias) {
+		this.tipoAlergias = tipoAlergias;
+	}
+
+	public FichaMedica getFichaMedica() {
+		return fichaMedica;
+	}
+
+	public void setFichaMedica(FichaMedica fichaMedica) {
+		this.fichaMedica = fichaMedica;
+	}
+
 }

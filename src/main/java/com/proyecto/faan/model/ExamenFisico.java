@@ -57,4 +57,95 @@ public class ExamenFisico {
     @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
     private FichaMedica fichaMedica;
 
+    //GyS
+    
+	public Integer getIdExamenFisico() {
+		return idExamenFisico;
+	}
+
+	public void setIdExamenFisico(Integer idExamenFisico) {
+		this.idExamenFisico = idExamenFisico;
+	}
+
+	public LocalDate getFechaRevisionFisisca() {
+		return fechaRevisionFisisca;
+	}
+
+	public void setFechaRevisionFisisca(LocalDate fechaRevisionFisisca) {
+		this.fechaRevisionFisisca = fechaRevisionFisisca;
+	}
+
+	public Double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(Double peso) {
+		this.peso = peso;
+	}
+
+	public Double getFrecuenciaCardiaca() {
+		return frecuenciaCardiaca;
+	}
+
+	public void setFrecuenciaCardiaca(Double frecuenciaCardiaca) {
+		this.frecuenciaCardiaca = frecuenciaCardiaca;
+	}
+
+	public String getMucosa() {
+		return mucosa;
+	}
+
+	public void setMucosa(String mucosa) {
+		this.mucosa = mucosa;
+	}
+
+	public String getOjosrojos() {
+		return ojosrojos;
+	}
+
+	public void setOjosrojos(String ojosrojos) {
+		this.ojosrojos = ojosrojos;
+	}
+
+	public String getPiel() {
+		return piel;
+	}
+
+	public void setPiel(String piel) {
+		this.piel = piel;
+	}
+
+	public String getSistemaUrinario() {
+		return sistemaUrinario;
+	}
+
+	public void setSistemaUrinario(String sistemaUrinario) {
+		this.sistemaUrinario = sistemaUrinario;
+	}
+
+	public String getSistemaDigestivo() {
+		return sistemaDigestivo;
+	}
+
+	public void setSistemaDigestivo(String sistemaDigestivo) {
+		this.sistemaDigestivo = sistemaDigestivo;
+	}
+
+	public String getAbdomen() {
+		return abdomen;
+	}
+
+	public void setAbdomen(String abdomen) {
+		this.abdomen = abdomen;
+	}
+
+	public FichaMedica getFichaMedica() {
+		return fichaMedica;
+	}
+
+	public void setFichaMedica(FichaMedica fichaMedica) {
+		this.fichaMedica = fichaMedica;
+	}
+
+    
 }

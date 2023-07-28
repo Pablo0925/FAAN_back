@@ -57,5 +57,116 @@ public class Animal implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "animal")
     private List<DetalleAdopcion> detalleAdopcion;
+
+
+	public Integer getIdAnimal() {
+		return idAnimal;
+	}
+
+
+	public void setIdAnimal(Integer idAnimal) {
+		this.idAnimal = idAnimal;
+	}
+
+
+	public String getPlacaAnimal() {
+		return placaAnimal;
+	}
+
+
+	public void setPlacaAnimal(String placaAnimal) {
+		this.placaAnimal = placaAnimal;
+	}
+
+
+	public String getNombreAnimal() {
+		return nombreAnimal;
+	}
+
+
+	public void setNombreAnimal(String nombreAnimal) {
+		this.nombreAnimal = nombreAnimal;
+	}
+
+
+	public String getFotoAnimal() {
+		return fotoAnimal;
+	}
+
+
+	public void setFotoAnimal(String fotoAnimal) {
+		this.fotoAnimal = fotoAnimal;
+	}
+
+
+	public Integer getEdadAnimal() {
+		return edadAnimal;
+	}
+
+
+	public void setEdadAnimal(Integer edadAnimal) {
+		this.edadAnimal = edadAnimal;
+	}
+
+
+	public String getEstadoAnimal() {
+		return estadoAnimal;
+	}
+
+
+	public void setEstadoAnimal(String estadoAnimal) {
+		this.estadoAnimal = estadoAnimal;
+	}
+
+
+	public RazaAnimal getRazaAnimal() {
+		return razaAnimal;
+	}
+
+
+	public void setRazaAnimal(RazaAnimal razaAnimal) {
+		this.razaAnimal = razaAnimal;
+	}
+
+
+	public FichaRegistro getFichaRegistro() {
+		return fichaRegistro;
+	}
+
+
+	public void setFichaRegistro(FichaRegistro fichaRegistro) {
+		this.fichaRegistro = fichaRegistro;
+	}
+
+
+	public FichaMedica getFichaMedica() {
+		return fichaMedica;
+	}
+
+
+	public void setFichaMedica(FichaMedica fichaMedica) {
+		this.fichaMedica = fichaMedica;
+	}
+
+
+	public Fundacion getFundacion() {
+		return fundacion;
+	}
+
+
+	public void setFundacion(Fundacion fundacion) {
+		this.fundacion = fundacion;
+	}
+
+
+	public List<DetalleAdopcion> getDetalleAdopcion() {
+		return detalleAdopcion;
+	}
+
+
+	public void setDetalleAdopcion(List<DetalleAdopcion> detalleAdopcion) {
+		this.detalleAdopcion = detalleAdopcion;
+	}
+    
     
 }

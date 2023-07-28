@@ -73,4 +73,71 @@ public class Usuario implements Serializable {
 
     public Usuario(){}
 
+    //GyS
+    
+	public Integer getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(Integer idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(String fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+	public Boolean getEstadoUsuario() {
+		return estadoUsuario;
+	}
+
+	public void setEstadoUsuario(Boolean estadoUsuario) {
+		this.estadoUsuario = estadoUsuario;
+	}
+
+	public String getTokenPassword() {
+		return tokenPassword;
+	}
+
+	public void setTokenPassword(String tokenPassword) {
+		this.tokenPassword = tokenPassword;
+	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+
+	public List<Rol> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Rol> roles) {
+		this.roles = roles;
+	}
+
+    
 }

@@ -43,4 +43,47 @@ public class DetalleAdopcion {
     @ManyToOne
     @JoinColumn(name = "idAnimal", referencedColumnName = "idAnimal")
     private Animal animal;
+
+	
+    
+    //Getter
+    public Integer getIdAdopcion() {
+		return idAdopcion;
+	}
+
+	public void setIdAdopcion(Integer idAdopcion) {
+		this.idAdopcion = idAdopcion;
+	}
+
+	public String getObservacion() {
+		return observacion;
+	}
+
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
+
+	public String getDocumento() {
+		return documento;
+	}
+
+	public void setDocumento(String documento) {
+		this.documento = documento;
+	}
+
+	public EncabezadoAdopcion getEncabezadoAdopcion() {
+		return encabezadoAdopcion;
+	}
+
+	public void setEncabezadoAdopcion(EncabezadoAdopcion encabezadoAdopcion) {
+		this.encabezadoAdopcion = encabezadoAdopcion;
+	}
+
+	public Animal getAnimal() {
+		return animal;
+	}
+
+	public void setAnimal(Animal animal) {
+		this.animal = animal;
+	}
 }

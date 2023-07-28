@@ -41,4 +41,48 @@ public class EncabezadoAdopcion {
     @JsonIgnore
     @OneToMany(mappedBy = "encabezadoAdopcion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<DetalleAdopcion> listaDetalle;
+
+    
+    //GyS
+	public Integer getIdEncabezadoAdopcion() {
+		return idEncabezadoAdopcion;
+	}
+
+	public void setIdEncabezadoAdopcion(Integer idEncabezadoAdopcion) {
+		this.idEncabezadoAdopcion = idEncabezadoAdopcion;
+	}
+
+	public LocalDate getFechaAdopcion() {
+		return fechaAdopcion;
+	}
+
+	public void setFechaAdopcion(LocalDate fechaAdopcion) {
+		this.fechaAdopcion = fechaAdopcion;
+	}
+
+	public String getObservacion() {
+		return observacion;
+	}
+
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+
+	public List<DetalleAdopcion> getListaDetalle() {
+		return listaDetalle;
+	}
+
+	public void setListaDetalle(List<DetalleAdopcion> listaDetalle) {
+		this.listaDetalle = listaDetalle;
+	}
+
+    
 }

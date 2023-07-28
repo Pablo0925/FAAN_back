@@ -33,4 +33,56 @@ public class Enfermedad {
     @ManyToOne
     @JoinColumn(name="idFichaMedica",referencedColumnName ="idFichaMedica")
     private FichaMedica fichaMedica;
+
+    //GyS
+    
+	public Integer getIdEnfermedad() {
+		return idEnfermedad;
+	}
+
+	public void setIdEnfermedad(Integer idEnfermedad) {
+		this.idEnfermedad = idEnfermedad;
+	}
+
+	public LocalDate getFechaEnfermedad() {
+		return fechaEnfermedad;
+	}
+
+	public void setFechaEnfermedad(LocalDate fechaEnfermedad) {
+		this.fechaEnfermedad = fechaEnfermedad;
+	}
+
+	public String getObservaciones() {
+		return observaciones;
+	}
+
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
+	}
+
+	public String getEstadoEnfermedad() {
+		return estadoEnfermedad;
+	}
+
+	public void setEstadoEnfermedad(String estadoEnfermedad) {
+		this.estadoEnfermedad = estadoEnfermedad;
+	}
+
+	public TipoEnfermedad getTipoEnfermedad() {
+		return tipoEnfermedad;
+	}
+
+	public void setTipoEnfermedad(TipoEnfermedad tipoEnfermedad) {
+		this.tipoEnfermedad = tipoEnfermedad;
+	}
+
+	public FichaMedica getFichaMedica() {
+		return fichaMedica;
+	}
+
+	public void setFichaMedica(FichaMedica fichaMedica) {
+		this.fichaMedica = fichaMedica;
+	}
+    
+
 }
